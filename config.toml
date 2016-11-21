@@ -1,0 +1,37 @@
+baseurl = "http://replace-this-with-your-hugo-site.com/"
+languageCode = "en-us"
+title = "Build Processes"
+theme = "blackburn"
+
+canonifyurls = true
+
+[params]
+  # Shown in the home page
+  subtitle = "The build Processes that are used in Front End Development"
+  custom_css = ["css/custom_style.css"]
+
+[menu]
+  # Shown in the side menu.
+  [[menu.main]]
+    name = "Home"
+    pre = ""
+    weight = 0
+    identifier = "home"
+    url = "/"
+  [[menu.main]]
+    name = "Git"
+    pre = ""
+    weight = 1
+    url = "/post/git/"
+  [[menu.main]]
+    name = "Grunt"
+    pre = ""
+    weight = 2
+    identifier = "grunt"
+    url = "/post/grunt/"
+  [[menu.main]]
+    name = "Gulp"
+    pre = ""
+    weight = 3
+    identifier = "gulp"
+    url = "/post/gulp/"
