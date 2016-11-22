@@ -1,0 +1,58 @@
+
+.custom-heading{
+  color: #b48608;
+  font-family: 'Droid serif', serif;
+  font-size: 36px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 44px;
+  margin: 0 0 12px;
+  text-align: left;
+}
+
+.custom-sub-heading{
+  color: #6b4f05;
+  font-family: 'Droid serif', serif;
+  font-size: 25px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 44px;
+  margin: 0 0 12px;
+  text-align: left;
+}
+
+.post-meta{
+  display: none;
+}
+
+highlight{
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+
+.info, .success, .warning, .error, .validation {
+  border: 1px solid;
+  margin: 10px 0px;
+  padding:15px 10px 15px 10px;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  font-family: 'Droid serif', serif;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: italic;
+  text-align: left;
+}
+
+.warning{
+  color: #9F6000;
+  background-color: #FEEFB3;
+
+}
+
+.info{
+  color: #00529B;
+  background-color: #BDE5F8;
+}
