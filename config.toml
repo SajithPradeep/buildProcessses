@@ -1,4 +1,4 @@
-baseurl = "http://replace-this-with-your-hugo-site.com/"
+baseurl = "https://build-processes.herokuapp.com"
 languageCode = "en-us"
 title = "Build Processes"
 theme = "blackburn"
