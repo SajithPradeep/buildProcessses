@@ -8,7 +8,7 @@ canonifyurls = true
 [params]
   # Shown in the home page
   subtitle = "The build Processes that are used in Front End Development"
-  custom_css = ["css/custom_style.css"]
+  custom_css = ["/css/custom_style.css"]
 
 [menu]
   # Shown in the side menu.
