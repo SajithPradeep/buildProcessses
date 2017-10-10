@@ -4,6 +4,9 @@ Tags = []
 title = "Git"
 draft = false
 +++
+<p class="custom-heading"> What is version control, and why should you care? </p>
+<p>Version control is a system that records changes to a file or a set of files over time so that you can recall specific versions later. If you’re a developer and want to keep every version of your code, it is very wise to use a Version Control System (VCS). 
+A VCS allows you to: revert files back to a previous state, revert the entire project back to a previous state, review changes made over time, see who last modified something that might be causing a problem, who introduces an issue and when, and more. Using a VCS also means that if you mess things up or lose files, you can generally recover easily.</p>
 
 <p class="custom-heading"> What is a commit? </p>
 <p> A commit should be a wrapper for related changes. For example, fixing two different bugs should produce two separate commits. Small commits make it easier for other team members to understand the changes and roll them back if something went wrong. With tools like the staging area and the ability to stage only parts of a file, Git makes it easy to create very granular commits. </p>
@@ -91,6 +94,208 @@ If at any time you want to switch branches, either to another feature branch or 
 
 <p>Hot fixes always start from the latest production code from the ‘master’ or ‘default’ branch. Other than that, they’re basically the same as release branches. Moreover, when you’re finished with the hot-fix, they behave the same way as finishing a release branch. The changes are merged back into both the production branch and the development branch, and a tag is created on the production branch for the hot fix release.
 </p>
+
+<p class="custom-heading"> What are some basic git commands? </p>
+<table class="table-style">
+    <thead class="table-head-style">
+        <tr>
+            <td class="table-column-style" width="20%"><strong><u>Git tasks </u></strong></td>
+            <td class="table-column-style" width="30%"><strong><u>Notes</u> </strong></td>
+            <td class="table-column-style" width="50%"><strong><u>Git Commands </u></strong> </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="table-column-style">Tell Git who you are</td>
+            <td class="table-column-style">Configure the author name and email address to be used with your commits. Note that Git strips some characters (for example trailing periods) from user.name.</td>
+            <td class="table-column-style">
+                git config --global user.name "Sam Smith" <br>
+                git config --global user.email sam@example.com
+            </td>
+        </tr>
+         <tr>
+            <td class="table-column-style">Create a new local repository</td>
+            <td class="table-column-style"></td>
+            <td class="table-column-style">
+                git init
+            </td>
+        </tr>
+         <tr>
+            <td class="table-column-style" rowspan=2>Check out a repository</td>
+            <td class="table-column-style">Create a working copy of a local repository</td>
+            <td class="table-column-style">
+                git clone /path/to/repository
+            </td>
+        </tr>
+         <tr>
+            <td class="table-column-style">For a remote server, use:</td>
+            <td class="table-column-style">
+                git clone username@host:/path/to/repository
+            </td>
+        </tr>
+         <tr>
+            <td class="table-column-style">Add files</td>
+            <td class="table-column-style">Add one or more files to staging (index)</td>
+            <td class="table-column-style">
+                git add < filename > <br>git add *
+            </td>
+        </tr>
+        <tr>
+            <td class="table-column-style" rowspan=2>Commit</td>
+            <td class="table-column-style">Commit any files you've added with git add, and also commit any files you've changed since then</td>
+            <td class="table-column-style">
+                git commit -a
+            </td>
+        </tr>
+        <tr>
+            <td class="table-column-style">Commit changes to head (but not yet to the remote repository)</td>
+            <td class="table-column-style">
+                git commit -m "Commit message"
+            </td>
+        </tr>
+        <tr>
+            <td class="table-column-style">Push</td>
+            <td class="table-column-style">Send changes to the master branch of your remote repository</td>
+            <td class="table-column-style">
+                git push origin master
+            </td>
+        </tr>
+        <tr>
+            <td class="table-column-style">Status</td>
+            <td class="table-column-style">List the files you've changed and those you still need to add or commit</td>
+            <td class="table-column-style">
+                git status
+            </td>
+        </tr>
+        <tr>
+            <td class="table-column-style" rowspan=2>Connect to a remote repository</td>
+            <td class="table-column-style">If you haven't connected your local repository to a remote server, add the server to be able to push to it</td>
+            <td class="table-column-style">
+                git remote add origin < server >
+            </td>
+        </tr>
+         <tr>
+            <td class="table-column-style">List all currently configured remote repositories</td>
+            <td class="table-column-style">
+                git remote -v
+            </td>
+        </tr>
+        <tr>
+            <td class="table-column-style" rowspan=7>Branches</td>
+            <td class="table-column-style">Create a new branch and switch to it</td>
+            <td class="table-column-style">
+               git checkout -b < branchname >
+            </td>
+        </tr>
+         <tr>
+            <td class="table-column-style">Switch from one branch to another</td>
+            <td class="table-column-style">
+                git checkout < branchname >
+            </td>
+        </tr>
+        <tr>
+            <td class="table-column-style">List all the branches in your repo, and also tell you what branch you're currently in</td>
+            <td class="table-column-style">
+                git branch
+            </td>
+        </tr>
+        <tr>
+            <td class="table-column-style">Delete the feature branch</td>
+            <td class="table-column-style">
+                git branch -d < branchname >
+            </td>
+        </tr>
+         <tr>
+            <td class="table-column-style">Push the branch to your remote repository, so others can use it</td>
+            <td class="table-column-style">
+                git push origin < branchname >
+            </td>
+        </tr>
+        <tr>
+            <td class="table-column-style">Push all branches to your remote repository</td>
+            <td class="table-column-style">
+                git push --all origin
+            </td>
+        </tr>
+        <tr>
+            <td class="table-column-style">Delete a branch on your remote repository</td>
+            <td class="table-column-style">
+                git push origin :< branchname >
+            </td>
+        </tr>
+        <tr>
+            <td class="table-column-style" rowspan=4>Update from the remote repository</td>
+            <td class="table-column-style">Fetch and merge changes on the remote server to your working directory</td>
+            <td class="table-column-style">
+                git pull
+            </td>
+        </tr>
+         <tr>
+            <td class="table-column-style">To merge a different branch into your active branch</td>
+            <td class="table-column-style">
+                git merge < branchname >
+            </td>
+        </tr>
+        <tr>
+            <td class="table-column-style">View all the merge conflicts:
+                <br>View the conflicts against the base file:
+                <br>Preview changes, before merging</td>
+            <td class="table-column-style">
+                git diff
+                <br> git diff --base < filename >
+                <br> git diff < sourcebranch > < targetbranch >
+            </td>
+        </tr>
+        <tr>
+            <td class="table-column-style">After you have manually resolved any conflicts, you mark the changed file</td>
+            <td class="table-column-style">
+                git add < filename >
+            </td>
+        </tr>
+        <tr>
+            <td class="table-column-style" rowspan=3>Tags</td>
+            <td class="table-column-style">You can use tagging to mark a significant changeset, such as a release</td>
+            <td class="table-column-style">
+                git tag 1.0.0 < commitID >
+            </td>
+        </tr>
+         <tr>
+            <td class="table-column-style">CommitId is the leading characters of the changeset ID, up to 10, but must be unique. Get the ID using</td>
+            <td class="table-column-style">
+                git log
+            </td>
+        </tr>
+        <tr>
+            <td class="table-column-style">Push all tags to remote repository</td>
+            <td class="table-column-style">
+               git push --tags origin
+            </td>
+        </tr>
+        <tr>
+            <td class="table-column-style" rowspan=2>Undo local changes</td>
+            <td class="table-column-style">If you mess up, you can replace the changes in your working tree with the last content in head:
+            Changes already added to the index, as well as new files, will be kept</td>
+            <td class="table-column-style">
+                git checkout -- < filename >
+            </td>
+        </tr>
+         <tr>
+            <td class="table-column-style">Instead, to drop all your local changes and commits, fetch the latest history from the server and point your local master branch at it, do this:</td>
+            <td class="table-column-style">
+                git fetch origin
+                <br>git reset --hard origin/master
+            </td>
+        </tr>
+         <tr>
+            <td class="table-column-style">Search</td>
+            <td class="table-column-style">Search the working directory for foo():</td>
+            <td class="table-column-style">
+                git grep "foo()"
+            </td>
+        </tr>
+    </tbody>
+</table>
+
 
 <p class="custom-heading">Wrapping up</p>
 <p>Git-flow is a great way to automate your handling of branch-based development in Git, and SourceTree now provides a simple and clear way to use it with an easy-to-use and intuitive GUI. Big thanks to Vincent Driessen for coming up with git-flow in the first place!

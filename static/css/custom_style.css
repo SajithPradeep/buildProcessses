@@ -56,3 +56,18 @@ highlight{
   color: #00529B;
   background-color: #BDE5F8;
 }
+
+.table-style {
+  border: 1px solid;
+  margin-bottom: 40px;
+}
+.table-head-style {
+  border-bottom: 1px solid;
+}
+.table-column-style {
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
