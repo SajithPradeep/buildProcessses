@@ -8,6 +8,11 @@ draft = false
 <p>Version control is a system that records changes to a file or a set of files over time so that you can recall specific versions later. If you’re a developer and want to keep every version of your code, it is very wise to use a Version Control System (VCS). 
 A VCS allows you to: revert files back to a previous state, revert the entire project back to a previous state, review changes made over time, see who last modified something that might be causing a problem, who introduces an issue and when, and more. Using a VCS also means that if you mess things up or lose files, you can generally recover easily.</p>
 
+<p class="custom-heading"> What is git? </p>
+<p>Git is a Distributed Version Control Systems (DVCS). In a DVCS (such as Git, Mercurial or Bazaar), clients don’t just check out the latest snapshot of the files: they fully mirror the repository. Thus if any server dies, and these systems were collaborating via it, any of the client repositories can be copied back up to the server to restore it. Every checkout is really a full backup of all the data.</p>
+<img src="/img/git.png"/>
+<p>Furthermore, many of these systems deal pretty well with having several remote repositories they can work with, so you can collaborate with different groups of people in different ways simultaneously within the same project. This allows you to set up several types of workflows that aren’t possible in centralized systems.</p>
+
 <p class="custom-heading"> What is a commit? </p>
 <p> A commit should be a wrapper for related changes. For example, fixing two different bugs should produce two separate commits. Small commits make it easier for other team members to understand the changes and roll them back if something went wrong. With tools like the staging area and the ability to stage only parts of a file, Git makes it easy to create very granular commits. </p>
 
